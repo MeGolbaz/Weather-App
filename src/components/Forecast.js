@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import dayjs from "dayjs";
 import * as weatherIcons from "../icons";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   wi: {
@@ -25,11 +26,13 @@ export default function Forecast(props) {
     const icon = prefix + weatherIcons.default[item.icon_id].icon;
     return (
       <ListItem key={index} className="forecastItem">
-        <ListItemText
-          className="week-day"
-          primary={dayjs(item.dt_txt).format("dddd")}
-          style={{ flex: "1 1 0%", textAlign: "left" }}
-        ></ListItemText>
+        <Link to={`/${dayjs(item.dt_txt).format("dddd")}`} >
+          <ListItemText
+            className="week-day"
+            primary={dayjs(item.dt_txt).format("dddd")}
+            style={{ flex: "1 1 0%", textAlign: "left" }}
+          ></ListItemText>
+        </Link>
         <IconButton disabled={true} aria-label="forecast icon">
           <span
             className={`${classes.wi} ${icon}`}

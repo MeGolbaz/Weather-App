@@ -40,7 +40,7 @@ const Home = () => {
         (forecast && Object.keys(forecast).length)
     ) {
         return (
-            <Container maxWidth="m">
+            <Container >
                 <Weather
                     city={city}
                     currentWeather={currentWeather}

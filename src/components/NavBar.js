@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   AppBar,
@@ -40,7 +41,9 @@ export default function NavBar() {
     <div className={classes.root}>
       <AppBar className={classes.appBar}>
         <Toolbar variant="dense">
-          <img src={logo} className={classes.appLogo} alt="logo" />
+          <Link to="/" >
+            <img src={logo} className={classes.appLogo} alt="logo" />
+          </Link>
           <div style={{ flex: "1 1 auto" }}></div>
         </Toolbar>
       </AppBar>

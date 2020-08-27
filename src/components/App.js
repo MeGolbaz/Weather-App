@@ -1,11 +1,12 @@
 import React from "react";
-import React, { useEffect, useState } from "react";
-import { createMuiTheme, Container, ThemeProvider } from "@material-ui/core";
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import NavBar from "./NavBar";
 import Home from "../pages/Home"
-
 
 export default function App() {
   const theme = createMuiTheme({
@@ -30,9 +31,11 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <NavBar />
-      <Home />
+      <Router>
+        <CssBaseline />
+        <NavBar />
+        <Home />
+      </Router>
     </ThemeProvider>
   );
 }
